@@ -14,7 +14,7 @@ type unionType = Foo | Baz
 //Use Math random so typescript can't infer the type
 const foo: unionType = Math.random() > 0.5 ? { category: 'foo' } : { category: 'baz' }
 
-const computedStuff = computed(() => {
+const computedStuff = computed(() => { //This is the line that throws the error
   switch (foo.category) {
     case 'foo':
       return 'foo'
